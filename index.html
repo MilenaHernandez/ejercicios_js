@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="script/funciones.js" language="javascript" type="text/javascript"></script>
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller</title>
+</head>
+
+<body>
+    <header>
+        Escriba un numero para ver la ejecucion del ejercicio.
+    </header>
+
+    <section>
+        <form action="">
+            <div>
+                <input type="number" id="numero" placeholder="numero del 1-38"  name="quantity" min="1" max="39" required>
+            </div> <br>
+
+            <div id="ej2" style="display: none">
+                <label></label>Nombre: </label> <input type="text" id="inNombre" required> <br>
+                <label>Sueldo: </label> <input type="text" id="inSueldo" required> <br>
+                <input type="button" id="btn" value="Ejecutar" onclick="ej2()"> <br>
+            </div>
+
+            <div id="ej4" style="display: none">
+                <h2>1.Calculo de perimetro:</h2>
+                <label>Valor del lado del cuadrado: </label><input type="text" id="lado" value="0" required> <br>
+                <h2>2.Operaciones matematicas:</h2>
+                <h3>a)</h3>
+                <label id="tNumeros">Ingrese los numeros: </label> <input type="number" id="n1" value="0"
+                    required><input type="number" id="n2" value="0" required><input type="number" id="n3" value="0"
+                    required><input type="number" id="n4" value="0" required><br>
+                <h3>b)</h3>
+                <label>Ingrese los numeros: </label> <input type="number" id="n5" value="0" required><input
+                    type="number" id="n6" value="0" required><input type="number" id="n7" value="0" required><input
+                    type="number" id="n8" value="0" required><br>
+                <h2>3.Importe de arituculo</h2>
+                <label>Precio unitario: </label> <input type="number" value="0" id="precio" required><br>
+                <label>Cantidad: </label> <input type="number" value="1" id="cantidad" required> <br> <br>
+
+                <input type="button" id="btn" value="Ejecutar" onclick="ej4()"> <br>
+            </div>
+
+            <div id="ej6" style="display: none">
+                <h2>1.Operaciones matematicas</h2>
+                <label>Ingrese los numeros: </label> <input type="number" id="n1_6" value="0"> <input type="number"
+                    id="n2_6" value="0"> <br>
+                <h2>2.Aprovado, o no?</h2>
+                <label>Ingrese las notas: </label> <input type="number" id="n5_6" value="0" required><input type="number"
+                    id="n6_6" value="0" required><input type="number" id="n7_6" value="0" required><br>
+                <h2>3.Numero de digitos</h2>
+                <input type="number" id="n3_6" value="1" name="quantity" min="1" max="99"> <br> <br>
+                <input type="button" id="btn" value="Ejecutar" onclick="ej6()"> <br>
+            </div>
+
+            <div id="ej7" style="display: none">
+                <h2>1.Numero mayor</h2>
+                <label>Ingrese los numeros: </label> <input type="number" id="n5_7" value="0" required><input type="number"
+                    id="n6_7" value="0" required><input type="number" id="n7_7" value="0" required><br>
+                <h2>2.Es positivo, cero o negativo?</h2>
+                <label>Ingrese el numero: </label> <input type="number" id="n1_7" value="0"> <br>
+                <h2>3.Cuantas cifras?</h2>
+                <label>Ingrese el numero: </label> <input type="number" id="n2_7" value="0"> <br>
+                <h2>3.Nivel del postulante</h2>
+                <input type="text" id="t1_7" placeholder="Nombre" required><br>
+                <input type="number" id="n8_7" placeholder="numero de preguntas"><br>
+                <input type="number" id="n9_7" placeholder="numero de rtas correctas"> <br> <br>
+
+                <input type="button" id="btn" value="Ejecutar" onclick="ej7()"> <br>
+            </div>
+
+            <div id="ej8" style="display: none">
+                <h2>1.Es navidad</h2>
+                <input type="number" id="n1_8" name="quantity" min="1" max="31"  placeholder="Dia" required>
+                <input type="number" id="n2_8" name="quantity" min="1" max="12"  placeholder="Mes" required>
+                <input type="number" id="n3_8" name="quantity" min="1" max="3000"  placeholder="Año" required>
+                <h2>2.Matematicas</h2>
+                <input type="number" id="n4_8" required>
+                <input type="number" id="n5_8" required>
+                <input type="number" id="n6_8" required>
+                <h2>3.Menores que 10?</h2>
+                <input type="number" id="n7_8" required>
+                <input type="number" id="n8_8" required>
+                <input type="number" id="n9_8" required>
+                <h2>3.Pocision en el plano</h2>
+                <input type="number" id="n10_8" placeholder="x" required>
+                <input type="number" id="n11_8" placeholder="y" required>
+                <h2>3.Sueldo a pagar</h2>
+                <input type="number" id="n12_8" placeholder="Sueldo" required>
+                <input type="number" id="n13_8" placeholder="Antiguedad" required>
+                <br><br>
+                <input type="button" id="btn" value="Ejecutar" onclick="ej8()">
+            </div>
+
+            <div id="ej10" style="display: none;">
+                <h2>Traductor</h2>
+                <select name="" id="lista">
+                    <option value="c">Casa</option>
+                    <option value="m">Mesa</option>
+                    <option value="p">Perro</option>
+                    <option value="g">Gato</option>
+                </select>
+                <br><br>
+                <input type="button" id="btn" value="Ejecutar" onclick="ej10()">
+            </div>
+
+            <div>
+                <input type="button" id="ejecutar" value="Ejecutar"
+                    onclick="eleccion(document.getElementById('numero').value)">
+            </div><br>
+            <div>
+                <textarea name="result" id="result" cols="30" rows="10" readonly></textarea>
+            </div>
+        </form>
+    </section>
+
+</body>
+
+</html>
