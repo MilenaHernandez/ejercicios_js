@@ -42,6 +42,10 @@ function eleccion(num) {
         case '11':
             rta = ej11();
             break;
+        case '12':
+            $('#ejecutar').hide();
+            $('#ej12').show();
+            break;
         default:
             rta = "Ingrese una opcion valida";
             break;
@@ -311,4 +315,8 @@ function ej11() {
     } while (n<500);
 
     return 'Serie: '+s+'\nMultiplos de 8: '+m;
+}
+
+function ej12(){
+
 }
