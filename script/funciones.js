@@ -42,6 +42,13 @@ function eleccion(num) {
         case '11':
             rta = ej11();
             break;
+        case '12':
+            $('#ejecutar').hide();
+            $('#ej12').show();
+            break;
+        case '13':
+            rta = ej13();
+            break;
         default:
             rta = "Ingrese una opcion valida";
             break;
@@ -364,9 +371,77 @@ function ej12() {
     r += '\n5.Serie del 10: '+cadena;
 
     var s1 = 0,s2 = 0;
+    $("#l1").each(function () {
+        $(this).children('input').each(function(){
+            s1 += parseInt($(this).val());
+         }); 
+    });
     
+    $("#l2").each(function () {
+        $(this).children('input').each(function(){
+            s2 += parseInt($(this).val());
+         }); 
+    });
 
+    if (s1>s2) {
+        r += '\n6.Lista 1 mayor';
+    }else{
+        r += '\n6.Lista 2 mayor';
+    }
+
+    var par = 0; impar = 0;
+
+    $("#l3").each(function () {
+        $(this).children('input').each(function(){
+            if (parseInt($(this).val())%2 == 0 ) {
+                par++;
+            }else{
+                impar++;
+            }
+         }); 
+    });
+    r += '\n7.Pares: '+par+', impares: '+impar;
 
     document.getElementById("result").innerHTML = 'Solución: ' + r;
+    $('#ej12').hide();
+    $('#ejecutar').show();
+}
 
+function ej13() {
+    var n = 0, suma = 0, r;
+    do {
+        n = parseInt(prompt('Ingrese un numero',0));
+        if (n!= 9999) {
+            suma += n;
+        }
+    } while (n!=9999);
+
+    if (n>0) {
+        r = '1.La suma es: '+suma+', es mayor que 0';
+    } else if (n<0) {
+        r = '1.La suma es: '+suma+', es menor que 0';
+    }else{
+        r = '1.La suma es: '+suma+', es 0';
+    }
+
+    r +=  '\n2.'
+    var cuenta, datos, suma = 0;;
+    do {
+        cuenta = prompt('Ingrese numCuenta, nombre y saldo separados por comas (,), para terminar ingrese un numero de cuenta negativo','');
+        datos = cuenta.split(',',3);
+        if (parseInt(datos[2])>0 ) {
+            r +=  datos+',Acreedor'+'\n';
+            suma += parseInt(datos[2]);
+        }else if (parseInt(datos[2])< 0 ){
+            r +=  datos+',Deudor'+'\n';
+        }else if (parseInt(datos[2])= 0){
+            r +=  datos+',Nulo'+'\n';
+        }
+    } while (parseInt(datos[0])>0);
+    r += 'La suma total de los saldos acreedores '+suma;
+
+    var censado;
+    r +=  '\n2.';
+    
+    return 'Solución: ' + r; 
 }
