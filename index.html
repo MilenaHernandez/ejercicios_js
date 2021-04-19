@@ -19,7 +19,8 @@
     <section>
         <form action="">
             <div>
-                <input type="number" id="numero" placeholder="numero del 1-38"  name="quantity" min="1" max="39" required>
+                <input type="number" id="numero" placeholder="numero del 1-38" name="quantity" min="1" max="39"
+                    required>
             </div> <br>
 
             <div id="ej2" style="display: none">
@@ -52,8 +53,8 @@
                 <label>Ingrese los numeros: </label> <input type="number" id="n1_6" value="0"> <input type="number"
                     id="n2_6" value="0"> <br>
                 <h2>2.Aprovado, o no?</h2>
-                <label>Ingrese las notas: </label> <input type="number" id="n5_6" value="0" required><input type="number"
-                    id="n6_6" value="0" required><input type="number" id="n7_6" value="0" required><br>
+                <label>Ingrese las notas: </label> <input type="number" id="n5_6" value="0" required><input
+                    type="number" id="n6_6" value="0" required><input type="number" id="n7_6" value="0" required><br>
                 <h2>3.Numero de digitos</h2>
                 <input type="number" id="n3_6" value="1" name="quantity" min="1" max="99"> <br> <br>
                 <input type="button" id="btn" value="Ejecutar" onclick="ej6()"> <br>
@@ -61,8 +62,8 @@
 
             <div id="ej7" style="display: none">
                 <h2>1.Numero mayor</h2>
-                <label>Ingrese los numeros: </label> <input type="number" id="n5_7" value="0" required><input type="number"
-                    id="n6_7" value="0" required><input type="number" id="n7_7" value="0" required><br>
+                <label>Ingrese los numeros: </label> <input type="number" id="n5_7" value="0" required><input
+                    type="number" id="n6_7" value="0" required><input type="number" id="n7_7" value="0" required><br>
                 <h2>2.Es positivo, cero o negativo?</h2>
                 <label>Ingrese el numero: </label> <input type="number" id="n1_7" value="0"> <br>
                 <h2>3.Cuantas cifras?</h2>
@@ -77,9 +78,9 @@
 
             <div id="ej8" style="display: none">
                 <h2>1.Es navidad</h2>
-                <input type="number" id="n1_8" name="quantity" min="1" max="31"  placeholder="Dia" required>
-                <input type="number" id="n2_8" name="quantity" min="1" max="12"  placeholder="Mes" required>
-                <input type="number" id="n3_8" name="quantity" min="1" max="3000"  placeholder="Año" required>
+                <input type="number" id="n1_8" name="quantity" min="1" max="31" placeholder="Dia" required>
+                <input type="number" id="n2_8" name="quantity" min="1" max="12" placeholder="Mes" required>
+                <input type="number" id="n3_8" name="quantity" min="1" max="3000" placeholder="Año" required>
                 <h2>2.Matematicas</h2>
                 <input type="number" id="n4_8" required>
                 <input type="number" id="n5_8" required>
@@ -110,6 +111,62 @@
                 <input type="button" id="btn" value="Ejecutar" onclick="ej10()">
             </div>
 
+            <div id="ej12">
+                <h2>1.Notas alumnos</h2>
+                <ul id="l0">
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                </ul>
+                <h2>2.Altura promedio</h2>
+                <div id="altura">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                </div>
+
+                <h2>3.Sueldo de empleados</h2>
+                <div id="sueldo">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                    <input type="number">
+                </div>
+
+                <h2>4.Serie del 5</h2>
+                <h2>5.Serie del 10</h2>
+                <h2>6.Conparar listas</h2>
+                <ul id="l1">
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                </ul>
+                <ul id="l2">
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                </ul>
+                <h2>7.Cuantos pares e impares</h2>
+                <ul id="l3">
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                    <li><input type="number"></li>
+                </ul>
+                <input type="button" id="btn" value="Ejecutar" onclick="ej12()">
+            </div>
+            
             <div>
                 <input type="button" id="ejecutar" value="Ejecutar"
                     onclick="eleccion(document.getElementById('numero').value)">

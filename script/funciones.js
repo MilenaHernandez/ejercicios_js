@@ -300,15 +300,73 @@ function ej10() {
 }
 
 function ej11() {
-    var s = '11', m = '8', n=0, cont = 2;
+    var s = '11', m = '8', n = 0, cont = 2;
     for (let i = 2; i < 26; i++) {
-        s += ' - '+(i*11);
+        s += ' - ' + (i * 11);
     }
     do {
-        n=8*cont;
-        m += ' - '+n;
+        n = 8 * cont;
+        m += ' - ' + n;
         cont++;
-    } while (n<500);
+    } while (n < 500);
 
     return 'Serie: '+s+'\nMultiplos de 8: '+m;
+}
+
+function ej12() {
+    var r;
+    var mayor = 0, menor = 0, suma = 0;
+    $("#l0 li").each(function () {
+        $(this).children('input').each(function(){
+            if (parseInt($(this).val()) >= 7 ) {
+                mayor++;
+            }else{
+                menor++;
+            }   
+         }); 
+    });
+    r = '1.Mayores '+mayor+', menores '+menor;
+
+    $("#altura").each(function () {
+        $(this).children('input').each(function(){
+            suma += parseInt($(this).val());
+         }); 
+    });
+
+    r += '\n2.Altura promedio = '+(suma/5);
+    suma = 0; menor = 0; mayor = 0;
+
+    $("#sueldo").each(function () {
+        $(this).children('input').each(function(){
+            suma += parseInt($(this).val());
+            if (parseInt($(this).val()) > 300 ) {
+                mayor++;
+            }else{
+                menor++;
+            }
+         }); 
+    });
+    r += '\n3.Ganan mas de $300 = '+mayor+', menos de $300 = '+menor+', Total coste nomina: '+suma;
+
+    var cadena = '5'
+    for (let i = 2; i < 21; i++) {
+        cadena += ' - '+(5*i);
+    }
+    r += '\n4.Serie del 5: '+cadena;
+
+    var n = 20, i = 3 ;
+    cadena = '10'
+    while (n<1500) {
+        cadena += ' - '+ n;
+        n = 10*i;
+        i++;
+    }
+    r += '\n5.Serie del 10: '+cadena;
+
+    var s1 = 0,s2 = 0;
+    
+
+
+    document.getElementById("result").innerHTML = 'Solución: ' + r;
+
 }
