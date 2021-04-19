@@ -317,90 +317,90 @@ function ej11() {
         cont++;
     } while (n < 500);
 
-    return 'Serie: '+s+'\nMultiplos de 8: '+m;
+    return 'Serie: ' + s + '\nMultiplos de 8: ' + m;
 }
 
 function ej12() {
     var r;
     var mayor = 0, menor = 0, suma = 0;
     $("#l0 li").each(function () {
-        $(this).children('input').each(function(){
-            if (parseInt($(this).val()) >= 7 ) {
+        $(this).children('input').each(function () {
+            if (parseInt($(this).val()) >= 7) {
                 mayor++;
-            }else{
+            } else {
                 menor++;
-            }   
-         }); 
+            }
+        });
     });
-    r = '1.Mayores '+mayor+', menores '+menor;
+    r = '1.Mayores ' + mayor + ', menores ' + menor;
 
     $("#altura").each(function () {
-        $(this).children('input').each(function(){
+        $(this).children('input').each(function () {
             suma += parseInt($(this).val());
-         }); 
+        });
     });
 
-    r += '\n2.Altura promedio = '+(suma/5);
+    r += '\n2.Altura promedio = ' + (suma / 5);
     suma = 0; menor = 0; mayor = 0;
 
     $("#sueldo").each(function () {
-        $(this).children('input').each(function(){
+        $(this).children('input').each(function () {
             suma += parseInt($(this).val());
-            if (parseInt($(this).val()) > 300 ) {
+            if (parseInt($(this).val()) > 300) {
                 mayor++;
-            }else{
+            } else {
                 menor++;
             }
-         }); 
+        });
     });
-    r += '\n3.Ganan mas de $300 = '+mayor+', menos de $300 = '+menor+', Total coste nomina: '+suma;
+    r += '\n3.Ganan mas de $300 = ' + mayor + ', menos de $300 = ' + menor + ', Total coste nomina: ' + suma;
 
     var cadena = '5'
     for (let i = 2; i < 21; i++) {
-        cadena += ' - '+(5*i);
+        cadena += ' - ' + (5 * i);
     }
-    r += '\n4.Serie del 5: '+cadena;
+    r += '\n4.Serie del 5: ' + cadena;
 
-    var n = 20, i = 3 ;
+    var n = 20, i = 3;
     cadena = '10'
-    while (n<1500) {
-        cadena += ' - '+ n;
-        n = 10*i;
+    while (n < 1500) {
+        cadena += ' - ' + n;
+        n = 10 * i;
         i++;
     }
-    r += '\n5.Serie del 10: '+cadena;
+    r += '\n5.Serie del 10: ' + cadena;
 
-    var s1 = 0,s2 = 0;
+    var s1 = 0, s2 = 0;
     $("#l1").each(function () {
-        $(this).children('input').each(function(){
+        $(this).children('input').each(function () {
             s1 += parseInt($(this).val());
-         }); 
-    });
-    
-    $("#l2").each(function () {
-        $(this).children('input').each(function(){
-            s2 += parseInt($(this).val());
-         }); 
+        });
     });
 
-    if (s1>s2) {
+    $("#l2").each(function () {
+        $(this).children('input').each(function () {
+            s2 += parseInt($(this).val());
+        });
+    });
+
+    if (s1 > s2) {
         r += '\n6.Lista 1 mayor';
-    }else{
+    } else {
         r += '\n6.Lista 2 mayor';
     }
 
     var par = 0; impar = 0;
 
-    $("#l3").each(function () {
-        $(this).children('input').each(function(){
-            if (parseInt($(this).val())%2 == 0 ) {
+    $("#l3 li").each(function () {
+        $(this).children('input').each(function () {
+            if (parseInt($(this).val()) % 2 == 0) {
                 par++;
-            }else{
+            } else {
                 impar++;
             }
-         }); 
+        });
     });
-    r += '\n7.Pares: '+par+', impares: '+impar;
+    r += '\n7.Pares: ' + par + ', impares: ' + impar;
 
     document.getElementById("result").innerHTML = 'Solución: ' + r;
     $('#ej12').hide();
@@ -410,38 +410,82 @@ function ej12() {
 function ej13() {
     var n = 0, suma = 0, r;
     do {
-        n = parseInt(prompt('Ingrese un numero',0));
-        if (n!= 9999) {
+        n = parseInt(prompt('Ingrese un numero', 0));
+        if (n != 9999) {
             suma += n;
         }
-    } while (n!=9999);
+    } while (n != 9999);
 
-    if (n>0) {
-        r = '1.La suma es: '+suma+', es mayor que 0';
-    } else if (n<0) {
-        r = '1.La suma es: '+suma+', es menor que 0';
-    }else{
-        r = '1.La suma es: '+suma+', es 0';
+    if (n > 0) {
+        r = '1.La suma es: ' + suma + ', es mayor que 0';
+    } else if (n < 0) {
+        r = '1.La suma es: ' + suma + ', es menor que 0';
+    } else {
+        r = '1.La suma es: ' + suma + ', es 0';
     }
 
-    r +=  '\n2.'
+    r += '\n2.Cuentas'
     var cuenta, datos, suma = 0;;
     do {
-        cuenta = prompt('Ingrese numCuenta, nombre y saldo separados por comas (,), para terminar ingrese un numero de cuenta negativo','');
-        datos = cuenta.split(',',3);
-        if (parseInt(datos[2])>0 ) {
-            r +=  datos+',Acreedor'+'\n';
+        cuenta = prompt('Ingrese numCuenta, nombre y saldo separados por comas (,), para terminar ingrese un numero de cuenta negativo', '');
+        datos = cuenta.split(',', 3);
+        if (parseInt(datos[2]) > 0) {
+            r += datos + ',Acreedor' + '\n';
             suma += parseInt(datos[2]);
-        }else if (parseInt(datos[2])< 0 ){
-            r +=  datos+',Deudor'+'\n';
-        }else if (parseInt(datos[2])= 0){
-            r +=  datos+',Nulo'+'\n';
+        } else if (parseInt(datos[2]) < 0) {
+            r += datos + ',Deudor' + '\n';
+        } else if (parseInt(datos[2]) = 0) {
+            r += datos + ',Nulo' + '\n';
         }
-    } while (parseInt(datos[0])>0);
-    r += 'La suma total de los saldos acreedores '+suma;
+    } while (parseInt(datos[0]) > 0);
+    r += 'La suma total de los saldos acreedores ' + suma;
 
-    var censado;
-    r +=  '\n2.';
-    
-    return 'Solución: ' + r; 
+    suma = 0;
+    var m = 0; f = 0, cont = 0;
+    r += '\n3.Censo';
+    do {
+        cuenta = prompt('Ingrese cc, edad y sexo (f o m) separados por comas (,), para terminar ingrese 0', '');
+        datos = cuenta.split(',', 3);
+        if (parseInt(datos[0]) > 0) {
+            suma++;
+        }
+        if (datos[2] == m) {
+            m++;
+            if (parseInt(datos[1]) >= 16 && parseInt(datos[1]) <= 65) {
+                cont++;
+            }
+        } else if (datos[2] == f) {
+            r += datos + ',Deudor' + '\n';
+        }
+    } while (parseInt(datos[0]) > 0);
+    r += 'Total de personas censadas:' + suma + ',\nCantidad de varones:' + m +
+        '\nCantidad de mujeres:' + f +
+        '\nCantidad de varones cuya edad varía entre 16 y 65 años:' + cont;
+
+    return 'Solución: ' + r;
+}
+
+function ej14() {
+    var cont = 0, line, r = '';
+    var base = -0.12, altura = -0.12, area = 0;
+    $("#p1 li").each(function () {
+        $(this).children('input').each(function () {
+            if (base == -0.12) {
+                base = parseInt($(this).val());
+            } else {
+                altura = parseInt($(this).val());
+            }
+            if (base != -0.12 && altura != -0.12) {
+                area = (base * altura) / 2;
+                line = 'b=' + base + ', h=' + altura + ', Area:' + area + '\n';
+                if (area > 12) {
+                    cont++;
+                }
+                base = -0.12; altura = -0.12; area = 0;
+            }
+        });
+    });
+    r += line + 'Triangulos con superficie mayor a 12:' + cont;
+
+    document.getElementById("result").innerHTML = 'Solución: ' + r;
 }
